@@ -26,6 +26,8 @@ fun CalcDisplay(){}
 fun CalcNumericButton(){}
 @Composable
 fun CalcOperationButton(){}
+@Composable
+fun CalcEqualsButton(){}
 
 
 @Preview
