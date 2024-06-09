@@ -23,7 +23,10 @@ fun CalcRow(){}
 @Composable
 fun CalcDisplay(){}
 @Composable
-fun
+fun CalcNumericButton(){}
+@Composable
+fun CalcOperationButton(){}
+
 
 @Preview
 @Composable
