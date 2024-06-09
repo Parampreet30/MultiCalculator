@@ -16,6 +16,14 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+@Composable
+fun CalcView(){}
+@Composable
+fun CalcRow(){}
+@Composable
+fun CalcDisplay(){}
+@Composable
+fun
 
 @Preview
 @Composable
