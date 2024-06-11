@@ -4,6 +4,8 @@ import App
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -31,7 +33,9 @@ fun CalcView(){}
 @Composable
 fun CalcRow(){}
 @Composable
-fun CalcDisplay(display: MutableState<String>){}
+fun CalcDisplay(display: MutableState<String>){
+    Text(display.value, modifier = Modifier.height(50.dp).padding(5.dp).fillMaxWidth())
+}
 @Composable
 fun CalcNumericButton(number: Int, display: MutableState<String>){
     Button(
