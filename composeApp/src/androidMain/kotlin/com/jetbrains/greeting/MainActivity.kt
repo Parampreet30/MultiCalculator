@@ -4,6 +4,8 @@ import App
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -15,6 +17,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.semantics.Role.Companion.Button
 import androidx.compose.ui.tooling.preview.Preview
@@ -32,6 +35,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun CalcView(){
     val displayText = mutableStateOf("0")
+    Column(modifier = Modifier.background(Color.LightGray))
 }
 @Composable
 fun CalcRow(startNum: Int, numButtons: Int, display: MutableState<String>){
