@@ -35,7 +35,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun CalcView(){
     val displayText = mutableStateOf("0")
-    Column(modifier = Modifier.background(Color.LightGray))
+    Column(modifier = Modifier.background(Color.LightGray)) {
+        Row{ CalcDisplay(mutableStateOf("0"))}
+        Row{}
+    }
 }
 @Composable
 fun CalcRow(startNum: Int, numButtons: Int, display: MutableState<String>){
@@ -47,7 +50,10 @@ fun CalcRow(startNum: Int, numButtons: Int, display: MutableState<String>){
 }
 @Composable
 fun CalcDisplay(display: MutableState<String>){
-    Text(display.value, modifier = Modifier.height(50.dp).padding(5.dp).fillMaxWidth())
+    Text(display.value, modifier = Modifier
+        .height(50.dp)
+        .padding(5.dp)
+        .fillMaxWidth())
 }
 @Composable
 fun CalcNumericButton(number: Int, display: MutableState<String>){
