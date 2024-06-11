@@ -28,7 +28,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            App()
+            //App()
+            CalcView()
         }
     }
 }
@@ -40,7 +41,13 @@ fun CalcView(){
         Row{ CalcDisplay(displayText)}
         Row{
             Column {
-                for (i in 7 downTo 1 step 3)
+                for (i in 7 downTo 1 step 3){
+                    CalcRow(startNum = i, numButtons = 3, display = displayText )
+                }
+                Row{
+                    CalcNumericButton(number = 0, display = displayText )
+                    CalcEqualsButton(display = displayText)
+                }
 
             }
             Column {
@@ -86,7 +93,7 @@ fun CalcOperationButton(operation: String, display: MutableState<String>){
 @Composable
 fun CalcEqualsButton(display: MutableState<String>){
     val displayState = remember { mutableStateOf("=")}
-    Button(onClick = {displayState.value = "0" }, modifier = Modifier.padding(4.dp)){
+    Button(onClick = {displayState.value = "=" }, modifier = Modifier.padding(4.dp)){
         Text(text = displayState.value)
     }
 }
