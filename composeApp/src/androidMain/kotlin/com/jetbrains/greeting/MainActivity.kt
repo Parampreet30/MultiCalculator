@@ -30,7 +30,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 @Composable
-fun CalcView(){}
+fun CalcView(){
+    val displayText = mutableStateOf("0")
+}
 @Composable
 fun CalcRow(startNum: Int, numButtons: Int, display: MutableState<String>){
     val endNum = startNum + numButtons
