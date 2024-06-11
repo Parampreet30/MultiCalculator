@@ -31,7 +31,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun CalcView(){}
 @Composable
-fun CalcRow(startNum: Int, numButtons: Int, display: MutableState<String>){}
+fun CalcRow(startNum: Int, numButtons: Int, display: MutableState<String>){
+    val endNum = startNum + numButtons
+}
 @Composable
 fun CalcDisplay(display: MutableState<String>){
     Text(display.value, modifier = Modifier.height(50.dp).padding(5.dp).fillMaxWidth())
