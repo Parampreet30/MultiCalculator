@@ -34,18 +34,30 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun CalcView(){
-    val displayText = mutableStateOf("0")
+    val displayText = remember {mutableStateOf("0")
+    }
     Column(modifier = Modifier.background(Color.LightGray)) {
-        Row{ CalcDisplay(mutableStateOf("0"))}
-        Row{}
+        Row{ CalcDisplay(displayText)}
+        Row{
+            Column {
+                for (i in 7 downTo 1 step 3)
+
+            }
+            Column {
+                CalcOperationButton(operation = "+", display = displayText )
+                CalcOperationButton(operation = "-", display = displayText )
+                CalcOperationButton(operation = "*", display = displayText )
+                CalcOperationButton(operation = "/", display = displayText )
+            }
+        }
     }
 }
 @Composable
 fun CalcRow(startNum: Int, numButtons: Int, display: MutableState<String>){
     val endNum = startNum + numButtons
     Row(modifier = Modifier.padding(0.dp)){
-        for (i in startNum<= ..<endNum){
-            CalcNumericButton(number = i, display = mutableStateOf(i.toString()))}
+        for (i in startNum ..<endNum){
+            CalcNumericButton(number = i, display)}
     }
 }
 @Composable
