@@ -31,7 +31,7 @@ fun CalcView(){}
 @Composable
 fun CalcRow(){}
 @Composable
-fun CalcDisplay(){}
+fun CalcDisplay(display: MutableState<String>){}
 @Composable
 fun CalcNumericButton(number: Int, display: MutableState<String>){
     Button(
