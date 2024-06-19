@@ -43,7 +43,8 @@ fun CalcView(){
     var leftNumber by rememberSaveable { mutableStateOf("0") }
     var rightNumber by rememberSaveable{ mutableStateOf("0")}
     var operation by rememberSaveable{mutableStateOf("")}
-    var complete by rememberSaveable{mutableStateOf("false")}
+    var complete by rememberSaveable{mutableStateOf(false)}
+    if(complete && operation !="")
     Column(modifier = Modifier.background(Color.LightGray)) {
         Row{ CalcDisplay(displayText)}
         Row{
