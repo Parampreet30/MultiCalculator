@@ -66,7 +66,9 @@ fun CalcView() {
     }
     fun numberPress(){}
  fun operationPress(){}
-    fun equalsPress(){}
+    fun equalsPress(){
+        complete = true
+    }
 
     Column(modifier = Modifier.background(Color.LightGray)) {
         Row{ CalcDisplay(displayText)}
