@@ -45,14 +45,17 @@ fun CalcView(){
     var rightNumber by rememberSaveable{ mutableStateOf(0)}
     var operation by rememberSaveable{mutableStateOf("")}
     var complete by rememberSaveable{mutableStateOf(false)}
-    if(complete && operation !=""){var answer by remember{ mutableStateOf(0) }
-        when(operation){
-            "+" -> answer =Calculator().add(leftNumber, rightNumber)
-            "-" -> answer =Calculator().subtract(leftNumber, rightNumber)
-            "*" -> answer =Calculator().multiply(leftNumber, rightNumber)
-            "/" -> answer =Calculator().divide(leftNumber, rightNumber)
+    if(complete && operation !="") {
+        var answer by remember { mutableStateOf(0) }
+        when (operation) {
+            "+" -> answer = Calculator().add(leftNumber, rightNumber)
+            "-" -> answer = Calculator().subtract(leftNumber, rightNumber)
+            "*" -> answer = Calculator().multiply(leftNumber, rightNumber)
+            "/" -> answer = Calculator().divide(leftNumber, rightNumber)
 
         }
+    }
+    else if(!complete && operation!= "")
         displayText.value =answer.toString()
     Column(modifier = Modifier.background(Color.LightGray)) {
         Row{ CalcDisplay(displayText)}
