@@ -38,14 +38,15 @@ class MainActivity : ComponentActivity() {
     }
 }
 @Composable
-fun CalcView(){
-    val displayText = remember {mutableStateOf("0")
+fun CalcView() {
+    val displayText = remember {
+        mutableStateOf("0")
     }
     var leftNumber by rememberSaveable { mutableStateOf(0) }
-    var rightNumber by rememberSaveable{ mutableStateOf(0)}
-    var operation by rememberSaveable{mutableStateOf("")}
-    var complete by rememberSaveable{mutableStateOf(false)}
-    if(complete && operation !="") {
+    var rightNumber by rememberSaveable { mutableStateOf(0) }
+    var operation by rememberSaveable { mutableStateOf("") }
+    var complete by rememberSaveable { mutableStateOf(false) }
+    if (complete && operation != "") {
         var answer by remember { mutableStateOf(0) }
         when (operation) {
             "+" -> answer = Calculator().add(leftNumber, rightNumber)
@@ -54,9 +55,16 @@ fun CalcView(){
             "/" -> answer = Calculator().divide(leftNumber, rightNumber)
 
         }
+
+    displayText.value = answer.toString()
+}
+    else if(!complete && operation!= ""){
+        displayText.value = rightNumber.toString()
     }
-    else if(!complete && operation!= "")
-        displayText.value =answer.toString()
+    else{
+        displayText.value = leftNumber.toString()
+    }
+
     Column(modifier = Modifier.background(Color.LightGray)) {
         Row{ CalcDisplay(displayText)}
         Row{
