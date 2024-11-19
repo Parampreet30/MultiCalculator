@@ -9,6 +9,8 @@ class Calculator {
         return left * right
     }
     fun divide(left: Int, right:Int): Int{
+        if(right==0)
+        throw ArithmeticException("Divison by zero")
         return left / right
     }
 }
